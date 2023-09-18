@@ -28,8 +28,8 @@ Parameters:
           - Key: Name
             Value: !Sub Web Server of ${AWS::StackName} Stack 
         UserData: !Base64 |
-        #! /bin/bash
-        yum update -y
+         #! /bin/bash
+          yum update -y
           yum install python3 -y
           yum install python3-pip -y
           pip3 install flask
@@ -41,8 +41,8 @@ Parameters:
           python3 app.py
 
       mySecGrp:
-      Type: AWS::EC2::SecurityGroup
-      Properties:
+        Type: AWS::EC2::SecurityGroup
+        Properties:
         GroupDescription: ssh http and port 8080 # Required
         GroupName: osvaldosecgrpromen
         SecurityGroupIngress: 
